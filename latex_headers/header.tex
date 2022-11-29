@@ -1,117 +1,12 @@
-\newcommand{\thesistitle}{PDF to the people: an atomic pair distribution function analysis primer}
-\newcommand{\thesisauthor}{Simon J. L. Billinge, Kirsten M. {\O}. Jensen, Soham Banerjee, Emil S. Bozin, Benjamin A. Frandsen, Maxwell W. Terban, Robert J. Koch }
-\newcommand{\thesisyear}{2022}
-\newcommand{\chFlag}{hold}
-\newcommand{\button}[1]{{\tt #1}}
-
-\newcommand{\plotdata}{{\sc plotdata}\xspace}
-\newcommand{\getx}{{\sc PDFgetX3}\xspace}
-\newcommand{\gui}{{\sc PDFgui}\xspace}
-\newcommand{\itc}{{\sc PDFitc}\xspace}
-\newcommand{\guitwo}{{\sc PDFgui2}\xspace}
-\newcommand{\xsuite}{{\sc xPDFsuite}\xspace}
-\newcommand{\esuite}{{\sc ePDFsuite}\xspace}
-\newcommand{\cmi}{{\sc Diffpy-CMI}\xspace}
-\newcommand{\morph}{{\sc PDFmorph}\xspace}
-\newcommand{\srmise}{{\sc SrMise}\xspace}
-\newcommand{\srfit}{{\sc SrFit}\xspace}
-\newcommand{\srxplanar}{{\sc SrXplanar}\xspace}
-\newcommand{\jupyter}{{\sc Jupyter}\xspace}
-\newcommand{\pycharm}{{\sc PyCharm}\xspace}
-\newcommand{\xpdacq}{{\sc xpdAcq}\xspace}
-\newcommand{\xpdan}{{\sc xpdAn}\xspace}
-\newcommand{\xpdtools}{{\sc xpdtools}\xspace}
-\newcommand{\shed}{{\sc SHED}\xspace}
-\newcommand{\pyfai}{{\sc PyFai}\xspace}
-\newcommand{\mpdf}{{\sc diffpy.mpdf}\xspace}
-\newcommand{\strumining}{{\sc structureMining}\xspace}
-\newcommand{\clustermining}{{\sc clusterMining}\xspace}
-\newcommand{\nmfmapping}{{\sc nmfMapping}\xspace}
-\newcommand{\motexml}{{\sc MotEx-ML}\xspace}
-\newcommand{\gotcha}[1]{\begin{quote} {\bf Gotcha: }#1\end{quote}}
-\newcommand{\download}{Follow the instructions in Section~\ref{ssec:chnm-ww-download}.}
-\newcommand{\plotgr}[1]{Plot the #1 using your preferred plotting program. See Section~\ref{sec:chnm-e} for help with {\tt .gr} file formats. See Sections~\ref{ssec:chnm-ww-plot} and~\ref{ssec:chgtp-ww-plot} for help with doing this using
-Diffpy tools.}
-\newcommand{\plotchi}[1]{Plot the #1 files using your preferred plotting program. See Section~\ref{sec:chgtp-e} for help with {\tt .chi}, {\tt .iq}, etc., file formats. See Section~\ref{ssec:chgtp-ww-plot} for help with doing this using
-Diffpy tools}
-\newcommand{\cmipreamble}{This section describes the \cmi solution.  It may be
-skipped on a first reading, but it will be helpful to you when, in the future, you want to learn how to use \cmi.  To get started with \cmi, follow the instructions in Section~\ref{sec:chnm-cmisol}. The \cmi code for the solution will be in a python file in the diffpy-cmi folder under solutions for this chapter in your downloaded data.  Read through the comments there.  They are expanded on below in greater detail where needed.}
-\newcommand{\itcref}{Using \strumining in \itc is a great way to get \cif files to make a start on your refinement campaign.  Please see~\ref{ssec:chgen-ww-pdfitc} for more details.
-}
-
-% Much-used math
-\newcommand{\qmax}{\ensuremath{Q_{\mathrm{max}}}\xspace}
-\newcommand{\qmaxinst}{\ensuremath{Q_{\mathrm{max-inst}}}\xspace}
-\newcommand{\qmin}{\ensuremath{Q_{\mathrm{min}}}\xspace}
-\newcommand{\qbroad}{\ensuremath{Q_{\mathrm{broad}}}\xspace}
-\newcommand{\qdamp}{\ensuremath{Q_{\mathrm{damp}}}\xspace}
-\newcommand{\deltatwo}{\ensuremath{\delta_2}\xspace}
-\newcommand{\deltaone}{\ensuremath{\delta_1}\xspace}
-\newcommand{\spdiameter}{\ensuremath{sp_{\mathrm{diameter}}}\xspace}
-\newcommand{\uiso}{\ensuremath{U_{\mathrm{iso}}}\xspace}
-\newcommand{\uaniso}{\ensuremath{U_{\mathrm{aniso}}}\xspace}
-\newcommand{\sratio}{\ensuremath{sratio}\xspace}
-\newcommand{\rpoly}{\ensuremath{rpoly}\xspace}
-\newcommand{\rw}{\ensuremath{R_w}\xspace}
-\newcommand{\rapdf}{\textit{RA-PDF}\space}
-\newcommand{\cif}{{\tt CIF}\xspace}
-\newcommand{\chifile}{{\tt .chi}\xspace}
-
-
-\newcommand{\rmin}{\ensuremath{r_{\mathrm{min}}}\xspace}
-\newcommand{\rmax}{\ensuremath{r_{\mathrm{max}}}\xspace}
-\newcommand{\rlim}{\ensuremath{r_{\mathrm{lim}}}\xspace}
-\newcommand{\mmax}{\ensuremath{m_{\mathrm{max}}}\xspace}
-\newcommand{\delr}{\ensuremath{dr}\xspace}
-\newcommand{\delrn}{\ensuremath{dr_N}\xspace}
-\newcommand{\delq}{\ensuremath{dQ}\xspace}
-\newcommand{\qualp}{\ensuremath{\mathcal{Q}_p}\xspace}
-\newcommand{\iq}{\ensuremath{I(Q)}\xspace}
-\newcommand{\sq}{\ensuremath{S(Q)}\xspace}
-\newcommand{\fq}{\ensuremath{F(Q)}\xspace}
-\newcommand{\gr}{\ensuremath{G(r)}\xspace}
-\newcommand{\rr}{\ensuremath{R(r)}\xspace}
-\newcommand{\q}{\ensuremath{Q}\xspace}
-\newcommand{\ir}{\ensuremath{r}\xspace}
-
-%units
-\newcommand{\iaa}{\AA\ensuremath{^{-1}}\xspace}
-\newcommand{\iaasquared}{\AA\ensuremath{^{-2}}\xspace}
-\newcommand{\aasquared}{\AA\ensuremath{^{2}}\xspace}
-
 
 
 \newcommand{\sjb}[1]{\textcolor{blue}{[sjb:#1]}}
-\newcommand{\koj}[1]{\textcolor{brown}{[koj:#1]}}
-%\newcommand{\sjb}[1]{}
-\newcommand{\sob}[1]{\textcolor{red}{[sob:#1]}}
-%\newcommand{\soh}[1]{}
-\newcommand{\baf}[1]{\textcolor{green}{[baf:#1]}}
-%\newcommand{\baf}[1]{}
-\newcommand{\rjk}[1]{\textcolor{purple}{[rjk:#1]}}
-\newcommand{\sjba}[1]{}
 \newcommand{\mt}[1]{\textcolor{orange}{[mt:#1]}}
-\newcommand{\mta}[1]{}
-\newcommand{\solutions}[1]{#1}
-\newcommand{\bs}[1]{\boldsymbol{#1}}
-\newcommand{\dd}{\mathrm{d}}
-\newcommand{\ii}{\mathrm{i}}
-\newcommand{\eg}{e.g.~}
-\newcommand{\eq}[1]{Eq.~\ref{eq:#1}}
-\newcommand{\eqs}[1]{Eqs.~\ref{eq:#1}}
-\newcommand{\fig}[1]{Fig.~\ref{fig:#1}}
-\newcommand{\figs}[1]{Figs.~\ref{fig:#1}}
-\newcommand{\sect}[1]{Section~\ref{sec:#1}}
-\newcommand{\apen}[1]{Appendix~\ref{sec:#1}}
-\newcommand{\tabl}[1]{Table~\ref{table:#1}}
 \newcommand{\bra}[1]{\left<#1\right|}
 \newcommand{\ket}[1]{\left|#1\right>}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\etal}{{\it et al.~}}
 \newcommand{\adhoc}{{\it ad hoc}\xspace}
-\newcommand{\nb}[1]{{\bf NOTE[#1]}}
-\newcommand{\nba}[1]{}
-\newcommand{\mAA}{{\text~\AA}\xspace}
 
 \renewcommand{\vec}[1]{\mathbf{#1}}
 
