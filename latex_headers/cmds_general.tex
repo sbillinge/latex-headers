@@ -119,3 +119,18 @@
     tabsize=2
 }
 \lstset{style=mystyle}
+
+% used for building skels.  If you want to jump out of the list and jump back in later do it this way:
+% \be               % begin the enumerated list
+% ...
+% \seti\ee          % paus the list, saving the counter
+% ...
+% \be\conti         % continue the list from where we left off
+% ...
+% \ee               % end the list, it is the end of hte paper
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
