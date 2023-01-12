@@ -1,3 +1,11 @@
+%% skeleton things
+\newcommand{\bes}{\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, label=\textbf{\textcolor{blue}{\arabic*}.}]}
+\newcommand{\ees}{\end{enumerate}}
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+
 %% PDF-specific things
 \newcommand{\qmax}{\ensuremath{Q_{\mathrm{max}}}\xspace}
 \newcommand{\qmaxinst}{\ensuremath{Q_{\mathrm{max-inst}}}\xspace}
