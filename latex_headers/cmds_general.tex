@@ -1,3 +1,7 @@
+%% Diffraction specific things
+\newcommand{\kalpha}{\ensuremath{K_\alpha}\xspace}
+\newcommand{\kbeta}{\ensuremath{K_\beta}\xspace}
+
 %% PDF-specific things
 \newcommand{\qmax}{\ensuremath{Q_{\mathrm{max}}}\xspace}
 \newcommand{\qmaxinst}{\ensuremath{Q_{\mathrm{max-inst}}}\xspace}
@@ -13,7 +17,7 @@
 \newcommand{\rpoly}{\ensuremath{rpoly}\xspace}
 \newcommand{\rw}{\ensuremath{R_w}\xspace}
 \newcommand{\rapdf}{\textit{RA-PDF}\space}
-\newcommand{\cif}{{\tt CIF}\xspace}
+\newcommand{\cif}{{\texttt{CIF}\xspace}
 \newcommand{\rmin}{\ensuremath{r_{\mathrm{min}}}\xspace}
 \newcommand{\rmax}{\ensuremath{r_{\mathrm{max}}}\xspace}
 \newcommand{\rlim}{\ensuremath{r_{\mathrm{lim}}}\xspace}
@@ -29,7 +33,7 @@
 \newcommand{\rr}{\ensuremath{R(r)}\xspace}
 \newcommand{\q}{\ensuremath{Q}\xspace}
 \newcommand{\ir}{\ensuremath{r}\xspace}
-\newcommand{\dd}{\mathrm{d}}
+\newcommand{\dd}{\ensuremath{\mathrm{d}}
 \newcommand{\ii}{\mathrm{i}}
 % we like our vectors to be bold and not italicised
 \renewcommand{\vec}[1]{\mathbf{#1}}
@@ -70,22 +74,11 @@
 %\newcommand{\abs}[1]{\left|#1\right|}
 
 % correctly formated latin
-\newcommand{\etal}{\textit{et al.}\xspace}
-\newcommand{\adhoc}{\textit{ad hoc}\xspace}
-\newcommand{\insitu}{\textit{in situ}\xspace}
-\newcommand{\operando}{\textit{operando}\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\adhoc}{\emph{ad hoc}\xspace}
+\newcommand{\insitu}{\emph{in situ}\xspace}
+\newcommand{\operando}{\emph{operando}\xspace}
 
-% place all figures in a sub-folder called figures, located in the folder where
-% the main latex file is
-%
-% then when you include the graphics, do not put any path there
-% e.g., \includegraphics[width=0.8\textwidth]{<name>}
-% for a figure called <name>.pdf (or <name>.png, or <name>.jpg...latex will do
-% its best to choose the extension from known image file types).
-%
-% as preference use pdf format files.  These are vector graphics and so produce
-% higher quality images at all scales.
-\graphicspath{ {./figures/} }
 
 % Colored symbols used during editing.
 % Also, define new colors here if you like
@@ -135,4 +128,3 @@
 \newcommand{\ee}{\end{enumerate}}
 \newcommand{\bes}{\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, label=\textbf{\textcolor{blue}{\arabic*}.}]}
 \newcommand{\ees}{\end{enumerate}}
-
