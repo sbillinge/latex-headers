@@ -1,11 +1,13 @@
-- repo: https://github.com/pre-commit/pre-commit-hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
       - id: no-commit-to-branch
         name: Prevent Commit to Main Branch
         args: ["--branch", "main"]
         stages: [pre-commit]
-- repo: https://github.com/pre-commit/pre-commit-hooks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
       - id: check-added-large-files
